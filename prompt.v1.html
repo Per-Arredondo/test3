@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Prácticas de Prompts IA</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: url('/mnt/data/Fondo-IA.jpg') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      color: #fff;
+    }
+    header {
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1.5rem 2rem;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    }
+    h2 {
+      color: #FFB300;
+    }
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 0.75rem;
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      resize: vertical;
+      font-family: monospace;
+      color: #222;
+    }
+    button {
+      background: #FFB300;
+      color: #000;
+      padding: 0.6rem 1.2rem;
+      margin-top: 0.5rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background: #FFA000;
+    }
+    .prompt-block {
+      margin-bottom: 2.5rem;
+    }
+    .illustration {
+      width: 100%;
+      max-height: 250px;
+      object-fit: contain;
+      margin: 1rem 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      background: white;
+      color: #222;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 0.5rem;
+      text-align: center;
+    }
+    ul { color: #fff; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🤖 Prompts para Prácticas de IA</h1>
+    <p>Comparte y explora prompts de forma colaborativa</p>
+  </header>
+
+  <div class="container">
+    <h2>🧠 Zona colaborativa de prompts</h2>
+    <p>Escribe tu prompt aquí y presiona <strong>Enter</strong> para compartirlo con otras personas que están usando esta app.</p>
+    <textarea id="sharedPrompt" placeholder="Escribe tu prompt aquí..."></textarea>
+    <button onclick="compartirPrompt()">🚀 Compartir Prompt</button>
+    
+      <button onclick="limpiarPrompt()">🧹 Limpiar prompt</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>📚 Ejemplos de prompts listos para usar</h2>
+    <p><em>📝 Nota: Cada uno de estos prompts le indicará a la IA que entregue todo el código completo (HTML, CSS y JavaScript) en un solo lienzo para que puedas copiarlo directamente a Visual Studio Code y luego subirlo a GitHub, sin necesidad de conocimientos previos en desarrollo web.</em></p>
+    <div class="prompt-block">
+      <h3>🧮 Ejemplo 1: Calculadora para niños/as de primaria</h3>
+      <p><strong>Desarrolla una aplicación web:</strong> para que niños y niñas de primaria practiquen las tablas de multiplicar.</p>
+      <textarea readonly>Actúa como un/a desarrollador/a de aplicaciones web educativas.
+
+🎯 Objetivo: Desarrolla una aplicación web sencilla para que niños y niñas de 6 a 8 años practiquen las tablas de multiplicar del 1 al 10.
+
+🛠️ Contexto: La aplicación debe mostrar ejercicios coloridos, con lenguaje positivo, e incluir ilustraciones o elementos visuales relacionados con animales o personajes simpáticos. Debe permitir al niño ingresar sus respuestas y mostrar si están correctas.
+
+📋 Formato del resultado: Código HTML, CSS y JavaScript para la aplicación funcional, todo en un solo bloque de código.
+
+💡 Nivel: Básico</textarea>
+      <button onclick="copiarTextoPrompt(this)">📋 Copiar</button>
+    </div>
+
+    <div class="prompt-block">
+      <h3>🔐 Ejemplo 2: Generador de contraseñas seguras</h3>
+      <p><strong>Desarrolla una aplicación web:</strong> que ayude a las personas a crear contraseñas seguras.</p>
+      <textarea readonly>Actúa como un/a desarrollador/a web especializado/a en ciberseguridad.
+
+🎯 Objetivo: Desarrolla una aplicación web que ayude a las personas a generar contraseñas seguras.
+
+🛠️ Contexto: La app debe incluir buenas prácticas para crear contraseñas seguras, permitir generar contraseñas automáticas y evaluar la fortaleza de contraseñas ingresadas por el usuario.
+
+📋 Formato del resultado: Código HTML, CSS y JavaScript de una aplicación sencilla, todo en un solo bloque de código.
+
+💡 Nivel: Básico</textarea>
+      <button onclick="copiarTextoPrompt(this)">📋 Copiar</button>
+    </div>
+
+    <div class="prompt-block">
+      <h3>🏡 Ejemplo 3: Agenda de citas para negocio inmobiliario</h3>
+      <p><strong>Desarrolla una aplicación web:</strong> para agendar citas en una agencia de bienes raíces.</p>
+      <textarea readonly>Actúa como un/a desarrollador/a web con experiencia en soluciones para negocios inmobiliarios.
+
+🎯 Objetivo: Desarrolla una aplicación web que permita agendar citas para mostrar propiedades o brindar asesoría inmobiliaria.
+
+🛠️ Contexto: La app debe mostrar un calendario con horarios disponibles, permitir seleccionar fecha, hora y tipo de cita, y mostrar una confirmación de la cita ingresada.
+
+📋 Formato del resultado: Código HTML, CSS y JavaScript para una app sencilla que simule el proceso de agendado, todo en un solo bloque de código.
+
+💡 Nivel: Intermedio</textarea>
+      <button onclick="copiarTextoPrompt(this)">📋 Copiar</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>🎨 Galería de ideas de la comunidad</h2>
+    <p><em>🧭 ¿Cómo funciona?</em> Cada vez que alguien crea su propio prompt en el reto creativo y lo guarda, este se añade automáticamente aquí. Así podrás ver ideas de tus compañeros, inspirarte y probarlas tú también. ¡Esta es una galería viva y colaborativa!</p>
+    <p><strong>🔢 Total de ideas compartidas: <span id="contadorPrompts">0</span></strong></p>
+    <div id="galeriaPrompts"></div>
+  </div>
+
+  <div class="container">
+    <h2>🧪 Reto creativo: ¡Crea tu propio prompt!</h2>
+    <p>Ahora que ya conoces cómo funcionan los prompts, es tu turno de crear uno desde cero.</p>
+    <p><strong>Instrucciones:</strong> Piensa en una situación, problema o idea y redacta un prompt que le pida a la IA desarrollar una aplicación web que solucione o mejore algo.</p>
+
+    <textarea id="userPrompt" placeholder="Ejemplo: Desarrolla una aplicación web para..." rows="6"></textarea>
+    <button onclick="guardarYCompartirMiPrompt()">💡 Guardar y compartir mi idea</button>
+  </div>
+
+  <script>
+    function copiarTexto(id) {
+      const texto = document.getElementById(id);
+      texto.select();
+      texto.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+      alert("Prompt copiado al portapapeles 🧠");
+    }
+
+    function copiarTextoPrompt(boton) {
+      const textarea = boton.previousElementSibling;
+      textarea.select();
+      textarea.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+      alert("Prompt copiado al portapapeles 🧠");
+    }
+
+    function compartirPrompt() {
+      const prompt = document.getElementById("sharedPrompt").value;
+      if (prompt.trim() !== '') {
+        const visible = document.getElementById("promptVisible");
+        visible.value = prompt;
+        document.getElementById("promptCompartido").style.display = 'block';
+      }
+    }
+
+    function guardarYCompartirMiPrompt() {
+      const userPrompt = document.getElementById("userPrompt").value;
+      if (userPrompt.trim() !== '') {
+        document.getElementById("sharedPrompt").value = userPrompt;
+        compartirPrompt();
+        agregarAGaleria(userPrompt);
+        alert("¡Tu prompt ha sido guardado, compartido e inspirado a otros! 🌟");
+      } else {
+        alert("Por favor escribe un prompt antes de guardarlo.");
+      }
+    }
+
+    function agregarAGaleria(prompt) {
+      const galeria = document.getElementById("galeriaPrompts");
+      const bloque = document.createElement("div");
+      bloque.classList.add("prompt-block");
+      const textarea = document.createElement("textarea");
+      textarea.readOnly = true;
+      textarea.textContent = prompt;
+      const boton = document.createElement("button");
+      boton.textContent = "📋 Copiar";
+      boton.onclick = function() {
+        textarea.select();
+        document.execCommand("copy");
+        alert("Prompt copiado desde la galería 🧠");
+      };
+      bloque.appendChild(textarea);
+      bloque.appendChild(boton);
+      galeria.prepend(bloque);
+      const contador = document.getElementById("contadorPrompts");
+      contador.textContent = galeria.childElementCount;
+    }
+  
+    function limpiarPrompt() {
+      document.getElementById("sharedPrompt").value = "";
+      document.getElementById("promptVisible").value = "";
+      document.getElementById("promptCompartido").style.display = 'none';
+      alert("Área de prompt limpiada 🧼");
+    }
+
+</body>
+</html>
